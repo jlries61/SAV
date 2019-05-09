@@ -189,21 +189,21 @@
 
   <p>The program is written in Pascal and thus far has only been
   compiled with the <a href="http://www.gnu-pascal.org">GNU Pascal
-  Compiler (GPC)</a> under Linux.&nbsp; A makefile is provided which 
-  should work on any UNIX or Linux system that has GPC installed.&nbsp; 
+  Compiler (GPC)</a> under Linux.&nbsp; A makefile is provided which
+  should work on any UNIX or Linux system that has GPC installed.&nbsp;
   I may make binaries available for selected platforms, should I feel so
   inclined.  Since SAV does compile under GPC, it should be easily portable
   to any platform supported by GCC (just about everything current, except
-  for IBM mainframes).</p>  
-  
-  <p>I recently attempted a compile under Free Pascal (FPC) which failed 
-  miserably.  On researching the issue, I discovered that my code wasn't 
-  nearly as Borland compatible as I thought.  I use Borland style units, but 
-  I also use some Extended Pascal constructs not supported by  the Borland 
-  dialect.  Because the Borland dialect is the most widely used, it is 
-  my intent at this point to work for full Borland compatibility (as much as I 
-  believe in open standards), but I reserve the right to opt for Extended 
-  Pascal compliance instead.  Either way, my goal is to allow easy compilation 
+  for IBM mainframes).</p>
+
+  <p>I recently attempted a compile under Free Pascal (FPC) which failed
+  miserably.  On researching the issue, I discovered that my code wasn't
+  nearly as Borland compatible as I thought.  I use Borland style units, but
+  I also use some Extended Pascal constructs not supported by  the Borland
+  dialect.  Because the Borland dialect is the most widely used, it is
+  my intent at this point to work for full Borland compatibility (as much as I
+  believe in open standards), but I reserve the right to opt for Extended
+  Pascal compliance instead.  Either way, my goal is to allow easy compilation
   on as many platforms as possible, and in any event, SAV will remain fully
   GPC-compatible for the forseeable future.</p>
   <a name="Build" id="Build"></a>
@@ -851,7 +851,7 @@ Election Quota: 3064
   surprisingly, where party loyalty is weak and ticket splitting
   endemic, results tend to be similar to those obtained by
   plurality voting.&nbsp; As partisanship becomes stronger, results
-  look more like those associated with open list proportional
+  look more like those associated with free list proportional
   representation.&nbsp; That is what I expect.</p> 
 
   <p>One line of research I intend to pursue is to determine the extent
@@ -984,33 +984,40 @@ Election Quota: 3064
   "OtherIdeas" id="OtherIdeas" />
 
   <h3>How to Fill Vacancies.</h3>
+  <p>
   While it's certainly possible to fill vacancies by simply holding a special
   election, it would, in all likelihood, throw proportionality out the window.
   Therefore, it seems a good idea to devise a mechanism for filling vacancies
   more in keeping with the spirit of SAV.  One possibility would be
-  to recount the ballots from the previous election with the person who's 
+  to recount the ballots from the previous election with the person whose
   removal caused the vacancy, plus any other no-longer-eligible candidates
   disqualified.  Votes for candidates elected and currently serving would be
   counted and credited as they were before.  The purpose of this would be
-  to simulate
-  as closely as possible the previous election as it would have been if the 
-  departed members and other now-inelligble persons had not been candidates.  
-  If one of the previously 
-  unsuccessful candidates reaches quota, he/she would be declared elected, 
-  otherwise, a special election could be held between the two candidates not 
-  previously elected that have the largest allocations.  In the latter case, 
-  it may be necessary to require a minimum number of raw votes to be 
-  eligible (maybe quota or a large fraction thereof).  If the vacant 
-  seat cannot be filled in either of those fashions, an "open" special 
-  election could be held.  To accomodate such recounts, it would be useful to 
-  be able to instruct SAV to ignore certain candidates, so as to not have to
-  modify the vote file.
+  to simulate as closely as possible the previous election as it would have
+  been if the departed members and other now-inelligble persons had not been
+  candidates.  If one of the previously unsuccessful candidates reaches quota,
+  he/she would be declared elected, otherwise, a special election could be
+  held between the two candidates not previously elected that have the largest
+  allocations.  In the latter case, it may be necessary to require a minimum
+  number of raw votes to be eligible (maybe quota or a large fraction thereof).
+  If the vacant seat cannot be filled in either of those fashions, an "open"
+  special election could be held.  To accomodate such recounts, it would be
+  useful to be able to instruct SAV to ignore certain candidates, so as to not
+  have to modify the vote file.</p>
+
+  <p>A third possibility would be to declare an alternate for each person
+    elected who would be the candidate not elected with the most votes in
+    common with the one who was (the same person might end up serving
+    as an alternate to multiple members).  If for whatever reason, the person
+    originally elected did not finish his term, the alternate would serve
+    for the remainder.  This would have the advantage of not requiring a
+    special election and being easier to compute than a full rerun of the
+    vote counting.</p>
 
   <h3>Other Ideas Welcome.</h3>
 
   <p>I certainly do not have a monopoly on good ideas, and am
-  willing to entertain any suggestions for improvement.</p><a name=
-  "Glossary" id="Glossary"></a>
+  willing to entertain any suggestions for improvement.</p>
 
   <a name="SampleData" /><h2>Sample Data and Scripts</h2>
   <p>I have created some data for testing purposes that I include in the 
@@ -1088,6 +1095,7 @@ Election Quota: 3064
   <p>Feel free to modify the scripts for the purpose of creating your own
      scenarios, or write your own.</p>
 
+  <a name="Glossary" id="Glossary"></a>
   <h2>Glossary</h2>
 
   <dl><a name="proprep" id="proprep"></a>
@@ -1137,6 +1145,16 @@ Election Quota: 3064
       of those candidates in whom the public has the most
       confidence.</p>
 
+      <p>
+        <dfn>"First past the post" (FFTP)</dfn> is the practice
+        of electing one candidate (or slate of candidates) per constituency
+        at a time by plurality vote, each voter being permitted to vote for
+        only one candidate (or slate).  Under <dfn>Block Voting</dfn>,
+        there are multiple seats to be filled, each person beling allowed
+        to vote for as many candidates as there are seats to be filled,
+        and the candidates with the most votes being declared elected.
+        </p>
+
       <p>US Presidential Electors are, in nearly all states, and in
       the District of Columbia, elected as slates of candidates
       pledged to vote for a particular pairing of candidates for
@@ -1167,10 +1185,23 @@ Election Quota: 3064
       difficult for one party to win a majority of the seats in a
       representative assembly without majority support among the
       voting population.&nbsp; However, runoffs are often required,
-      increasing the time and cost of administering elections.</p>
+        increasing the time and cost of administering elections.</p>
+
+      <p>Under <dfn>Alternative Voting</dfn>, voters are permitted
+        to rank the candidates in order of prederence and if no
+        candidate receives a majority of the first place votes,
+        the votes of the least popular candidates can be transfered
+        to more popular ones in accordance with the wishes of individual
+        voters.  Thus, it is a special case of
+        <a href="#STV"> Single Transferrable Vote</a> in which only a
+        single candidate is elected per constituency.  The President
+        of the Irish Republic and members of the Australian House of
+        Representatives are elected in this fashion.  This procedure
+        is often called "Instant Runoff Voting" (IRV) in the USA, where
+        it is sometimes advocated as a replacement for plurality voting.</p>
     </dd>
 
-    <dt>Incomplete voting systems</dt>
+    <dt>Incomplete voting systems (Limited Voting)</dt>
 
     <dd>
       <p>Election systems in which voters are only allowed to
@@ -1186,10 +1217,13 @@ Election Quota: 3064
         are chosen every second year) and no party is permitted to
         nominate more than one at large candidate per election,
         making it impossible for any one party to hold more than
-        eleven of the thirteen seats.&nbsp; When voters are only
+        eleven of the thirteen seats.&nbsp;  When voters are only
         permitted to select one candidate each, but multiple seats
         are filled, the practice is sometimes referred to as
-        "Single Nontransferrable Vote" (SNTV).</li>
+        <dfn>Single Nontransferrable Vote (SNTV)</dfn>.
+        Eleven members of each house of the Puerto Rico Legislative
+        Assembly are elected at large using SNTV.
+        </li>
 
         <li><a name="incomplete_list" id=
         "incomplete_list"></a>Those where voters select party
@@ -1251,14 +1285,21 @@ Election Quota: 3064
 
     <dd>
       <p>A proportional representation system in which voters
-      select individual candidates which are counted as votes for
-      both the candidates, and the parties that nominated
-      them.&nbsp; Seats are awarded to the parties in proportion to
-      the votes each received, and are filled by the candidates
-      from each party that win the largest numbers of votes.&nbsp;
-      There is often a minimum percentage of votes required for
-      representation. This form of proportional representation is
-      common in much of continental Europe.</p>
+        are permitted to select individual candidates within a party
+        list.&nbsp; Seats are awarded to the parties in proportion to
+        the votes each received, and are filled by the candidates
+        from each party that win the largest numbers of votes.&nbsp;
+        There is often a minimum percentage of votes required for
+        representation. This form of proportional representation is
+        common in much of continental Europe and Latin America.</p>
+
+      <p><dfn>Free List Proportional Representation</dfn> is a
+        special case of Open List Proportional Representation that
+        allows voters to vote for as many individual candidates as
+        there are seats to be filled, the votes being regarded as
+        cast for both the candidates and their parties.  This allows
+        allows for split ticket voting, which is generally precluded
+        in list system proportional representation.</p>
     </dd>
 
     <dt><a name="STV" id="STV"></a>Single Transferrable Vote
@@ -1278,26 +1319,21 @@ Election Quota: 3064
       candidates with the highest numbers of votes are
       declared elected.&nbsp; When STV is used in single member
       constituencies, it is sometimes referred to as "Instant
-      Runoff Voting" (IRV), which is often advocated by would-be
-      election reformers in the USA.&nbsp; STV in multimember
-      constituencies is the only form of proportional
+      Runoff Voting" (IRV) or Alternative Voting (AV).&nbsp;
+      STV in multimember constituencies is the only form of proportional
       representation in common use in which candidates run solely
-      as individuals, rather than as members of a party
-      slate.&nbsp; It is is rarely used outside of the former British 
-      Empire.</p>
+      as individuals, rather than as members of a party slate.&nbsp;
+      It is is rarely used outside of the former British Empire.</p>
 
       <p>STV is widely used in Ireland and Australia, and is
       traditionally advocated by the Liberal Democratic Party in
-      the UK, where plurality elections are the norm.&nbsp; <i>Dail
-      Eireann</i> (the lower house of the Irish Parliament) is elected
+      the UK, where plurality elections are the norm.&nbsp; <dfn>Dail
+      Eireann</dfn> (the lower house of the Irish Parliament) is elected
       by STV from multimember constituences, as is the Australian
-      Senate.&nbsp; 45 of the 60 members of the Irish Senate are
-      indirectly elected through STV from among panels of
-      candidates nominated to represent different areas of
-      expertise.</p>
-
-      <p>The members of the Australian House of Representatives are
-      elected by IRV, as is the President of the Irish Republic.</p>
+      Senate.&nbsp; 45 of the 60 members of the Irish Senate
+      (<dfn>Seanad Eireann</dfn>) are indirectly elected through STV
+      from among panels of candidates nominated to represent different
+      areas of expertise.</p>
 
       <p>SAV is proposed as an alternative non-partisan system of
       proportional representation and is partly based on STV.</p>
