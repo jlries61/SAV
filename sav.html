@@ -147,7 +147,7 @@
 
         <li><a href="#EffAssign">More Efficient
         Assignment.</a></li>
-
+        <li><a href="#Vacancies">How to Fill Vacancies.</a></li>
         <li><a href="#OtherIdeas">Other Ideas Welcome.</a></li>
       </ol>
     </li>
@@ -202,8 +202,8 @@
   Pascal compliance instead.  Either way, my goal is to allow easy compilation
   on as many platforms as possible, and in any event, SAV will remain fully
   GPC-compatible for the forseeable future.</p>
-  <a name="Build" id="Build"></a>
 
+  <a name="Build" id="Build"></a>
   <h3>Building From Source Code</h3>
 
   <ol>
@@ -212,17 +212,18 @@
     <li>Type "make"</li>
 
     <li>If it works, you should get an executable named "sav" (or
-    sav.exe on DOS/Windows). Try running the program without arguments; 
-    you should get a useful help message.</li>
-  </ol><a name="Install" id="Install"></a>
+    sav.exe on DOS/Windows). Try running the program without arguments.
+    You should get a useful help message.</li>
+  </ol>
 
+  <a name="Install" id="Install"></a>
   <h3>Installing the SAV executable</h3>
 
   <p>This is very easy: just copy the executable into a directory
   in the path like /usr/local/bin. You will probably want to
-  set the permissions so that everyone can execute it.</p><a name=
-  "WhyPascal" id="WhyPascal"></a>
+  set the permissions so that everyone can execute it.</p>
 
+  <a name="WhyPascal" id="WhyPascal"></a>
   <h3>Why is it written in Pascal?</h3>
 
   <p>Because it makes for more readible code, and is less prone to
@@ -233,9 +234,9 @@
   available. If not, I can always rewrite SAV in Ada
   :-).</p><a name="Use" id="Use"></a>
 
-  <h2>How do I use it?</h2><a name="Quickstart" id=
-  "Quickstart"></a>
+  <h2>How do I use it?</h2>
 
+  <a name="Quickstart" id="Quickstart"></a>
   <h3>Quickstart</h3>
 
   <p>The help message, which is displayed if SAV runs without
@@ -259,12 +260,12 @@ sav &lt;control deck&gt; &lt;vote file&gt;
 
   <p>The vote file will be a text file, with one vote per
   line. Each vote record will consist of the indices of the
-  candidates voted for, delimited by spaces.</p><a name=
-  "ControlDeck" id="ControlDeck"></a>
+  candidates voted for, delimited by spaces.</p>
 
+  <a name="ControlDeck" id="ControlDeck"></a>
   <h3>The Control Deck</h3>
 
-  <p>The control deck contains the specifications for the election.
+  <p>The <dfn>control deck</dfn> contains the specifications for the election.
   As stated above, the first line contains the number of seats to
   be filled and a runoff indicator. The remaining lines contain the
   candidates running (one line per candidate). An example, with
@@ -305,12 +306,12 @@ Orville Offenbach (Water)
   be filled will be awarded to the top remaining
   vote-getters. It is anticipated that the more seats there
   are to be filled and the less fragmented the electorate, the less
-  necessary runoffs would be.</p><a name="VoteFile" id=
-  "VoteFile"></a>
+  necessary runoffs would be.</p>
 
+  <a name="VoteFile" id="VoteFile"></a>
   <h3>The Vote File</h3>
 
-  <p>The vote file is a text file, will one vote record per
+  <p>The <dfn>vote file</dfn> is a text file, will one vote record per
   line. Each vote record will consist of the indeces of the
   candidates voted for, delimited by spaces. Each candidate's
   index is determined by the position of his name in the control
@@ -339,9 +340,9 @@ Orville Offenbach (Water)
   candidates voted for, the more limited the choice. Blank
   votes are ignored. Voting for all candidates has the same
     practical effect as voting for none (except that a vote
-    is ultimately credited to a candidate).</p><a name="Results" id=
-  "Results"></a>
+    is ultimately credited to a candidate).</p>
 
+  <a name="Results" id="Results"></a>
   <h3>Results</h3>
 
   <p>To run with ctldeck.txt as the control deck, and votes1.txt as
@@ -424,8 +425,9 @@ Election Quota: 3064
   balloting (Higgins) ends up losing the runoff to both Carney, and
   George, who finished fourth and fifth (respectively) in the
   initial balloting, but first and second in the
-  runoff.</p><a name="TechSupport" id="TechSupport"></a>
+  runoff.</p>
 
+  <a name="TechSupport" id="TechSupport"></a>
   <h3>Technical Support</h3>
 
   <p>For now, I am willing to answer queries by e-mail (See my
@@ -435,10 +437,12 @@ Election Quota: 3064
   my regular job both get priority over free support.
   Details are often important; clarity always is.
   The easier you make it for me to help you, the prompter
-  the help is likely to be.</p><a name="Algorithm" id="Algorithm"></a>
+  the help is likely to be.</p>
 
-  <h2>How does it work?</h2><a name="InitTab" id="InitTab"></a>
+  <a name="Algorithm" id="Algorithm"></a>
+  <h2>How does it work?</h2>
 
+  <a name="InitTab" id="InitTab"></a>
   <h3>Initial Tabulation</h3>
 
   <p>Since the raw vote totals are used to determine the ranking of
@@ -452,9 +456,9 @@ Election Quota: 3064
   it is mathematically impossible for more candidates to be elected
   than there are seats to be filled. In the event of an
   election for a single seat, the quota will be an absolute
-  majority (50%+1) of the persons voting.</p><a name="Alloc1" id=
-  "Alloc1"></a>
+  majority (50%+1) of the persons voting.</p>
 
+  <a name="Alloc1" id="Alloc1"></a>
   <h3>First Allocation</h3>
 
   <p>The next step is to allocate each of the votes cast to a
@@ -473,9 +477,9 @@ Election Quota: 3064
 
   <p>If, after this initial allocation, as many candidates reach
   quota as there are seats to be filled, they are declared elected
-  and no more processing need take place.</p><a name="Alloc2" id=
-  "Alloc2"></a>
+  and no more processing need take place.</p>
 
+  <a name="Alloc2" id="Alloc2"></a>
   <h3>Second Allocation</h3>
 
   <p>If not all seats are filled, the next step is to transfer
@@ -487,9 +491,9 @@ Election Quota: 3064
   vote that has not yet reached quota (if any). The
   candidates are re-sorted after each transfer. The process
   stops when either all seats are filled, or there are no more
-  votes that can be transfered.</p><a name="FinalAlloc" id=
-  "FinalAlloc"></a>
+  votes that can be transfered.</p>
 
+  <a name="FinalAlloc" id="FinalAlloc"></a>
   <h3>Final Allocation</h3>
 
   <p>If, after the first two allocations, there are still seats
@@ -505,8 +509,9 @@ Election Quota: 3064
   candidate with the next smallest allocation is eliminated and the
   process continues. The process ends when either all seats
   have been filled, or all candidates have either reached quota or
-  been eliminated.</p><a name="AwardSeats" id="AwardSeats"></a>
+  been eliminated.</p>
 
+  <a name="AwardSeats" id="AwardSeats"></a>
   <h3>Awarding of Seats</h3>
 
   <p>Seats are awarded to the candidates that have reached
@@ -527,11 +532,12 @@ Election Quota: 3064
   displayed. This will almost always be higher than if the
   seats were awarded in accordance to plurality, usually much
   higher, unless the number of seats contested is small (ie. one or
-  two).</p><a name="Why" id="Why"></a>
+  two).</p>
 
-  <h2>Why would I want to use it anyway?</h2><a name="TrueProp" id=
-  "TrueProp"></a>
+  <a name="Why" id="Why"></a>
+  <h2>Why would I want to use it anyway?</h2>
 
+  <a name="TrueProp" id="TrueProp"></a>
   <h3>It is truly proportional.</h3>
 
   <p>Unlike pseudo-proportional systems such as <a href=
@@ -540,15 +546,15 @@ Election Quota: 3064
   that seats will be awarded to competing parties or factions
   roughly in proportion to their support among the
   electorate. Unlike winner-take-all systems (including
-  <a href="#plurality">plurality</a> systems, such as those used 
-  in the US, Canada and the
-  UK), SAV makes it nearly impossible for any faction to win a
+  <a href="#plurality">plurality</a> systems, such as those used
+  in the US, Canada and the UK), SAV makes it nearly impossible for any faction to win a
   majority in an elective body without majority support (barring
   unequally apportioned constituencies). Plurality voting allows
   a party or faction to win a majority with as little
   as one third of the vote, if the opposition is severely
-  fragmented.</p><a name="HowProp" id="HowProp"></a>
+  fragmented.</p>
 
+  <a name="HowProp" id="HowProp"></a>
   <h4>How is it proportional?</h4>
 
   <p>Caveat: It is not, unless the number of seats per <a href=
@@ -559,9 +565,9 @@ Election Quota: 3064
   seeks to evenly divide the electorate among as many candidates as
   there are seats to be filled. Since each voter has a single
   vote, the votes credited to each candidate represent (in theory)
-  a different segment of the electorate.</p><a name="NonPartisan"
-  id="NonPartisan"></a>
+  a different segment of the electorate.</p>
 
+  <a name="NonPartisan" id="NonPartisan"></a>
   <h3>It is Officially Non-Partisan.</h3>
 
   <p>SAV completely ignores party affiliations of candidates.
@@ -575,8 +581,9 @@ Election Quota: 3064
   groupings, and even if formal party groupings do not exist.
   It is even appropriate for use by clubs, corporations, and other
   private organizations where party affiliation is, or should be
-  irrelevant.</p><a name="Dispolar" id="Dispolar"></a>
+  irrelevant.</p>
 
+  <a name="Dispolar" id="Dispolar"></a>
   <h3>It Discourages Polarization.</h3>
 
   <p>By awarding votes to the candidates with the broadest support
@@ -599,8 +606,9 @@ Election Quota: 3064
   making it more difficult to shut out minority factions, will tend
   to reduce the motivation for cut-throat politics, thus allowing
   politicians and voters with differing opinions to more peacefully
-  coexist.</p><a name="Account" id="Account"></a>
+  coexist.</p>
 
+  <a name="Account" id="Account"></a>
   <h3>It Makes Politicians Individually Accountable To the
   Voters.</h3>
 
@@ -614,20 +622,20 @@ Election Quota: 3064
   allow parties to order the candidates by preference, thus
   rewarding party loyalty and seniority, and making the individuals
   elected almost completely unaccountable to the general
-  public.</p><a name="Gerrymandering" id="Gerrymandering"></a>
+  public.</p>
 
-  <h3>It is Resistant to Gerrymandering</h3>
+  <a name="Gerrymandering" id="Gerrymandering"></a>
+  <h3>It is Resistant to Gerrymandering.</h3>
 
   <p>In common with other proportional systems, if the number of
   seats per <a href="#constituency">constituency</a> is
   sufficiently large (perhaps 5-7), seats will be awarded to parties 
-  or factions
-  in proportion to their support among the electorate, frustrating
+  or factions in proportion to their support among the electorate, frustrating
   efforts to rig elections in favor of one faction or another
   through the creative drawing of election districts (often a
-  danger with majority or plurality systems.</p><a name=
-  "SimpleAdmin" id="SimpleAdmin"></a>
+  danger with majority or plurality systems.</p>
 
+  <a name="SimpleAdmin" id="SimpleAdmin"></a>
   <h3>It is Simple to Administer.</h3>
 
   <p>Balloting takes place in the same way as in a <a href=
@@ -639,8 +647,9 @@ Election Quota: 3064
   ballots are in a form that is easy to scan electronically,
   votes could be
   rapidly read for processing by SAV, and results published the
-  same day.</p><a name="twoparty" id="twoparty"></a>
+  same day.</p>
 
+  <a name="twoparty" id="twoparty"></a>
   <h3>Won't This Undermine the Two Party System?</h3>
 
   <p>Maybe. <a href="#plurality">Plurality</a> voting systems
@@ -702,9 +711,9 @@ Election Quota: 3064
   Legislature in California are so drawn as to virtually insure the
   election of the candidate of a particular party in nearly all of
   them. This was deliberately done to minimize the possiblity
-  of seats shifting from one party to another.</p><a name=
-  "Effect" id="Effect"></a>
+  of seats shifting from one party to another.</p>
 
+  <a name="Effect" id="Effect"></a>
   <h3>What would this do to my party?</h3>
 
   <p>My prediction and hope would be that replacing a majoritarian
@@ -717,7 +726,7 @@ Election Quota: 3064
   for candidates of smaller parties to be elected, which would make
   it more difficult to maintain a two party duopoly such as the
   Democratic/Republican rivalry that has dominated US politics
-  since the 1850s.  It would also be my expectation that it 
+  since the 1850s.  It would also be my expectation that it
   would make it more difficult to exclude candidates representing ethnic
   or religious minorities from serious consideration, even in the
   face of major party collusion.</p>
@@ -735,8 +744,9 @@ Election Quota: 3064
   proportional representation than under a majoritarian system, but
   the degree will depend on their ability to win the confidence and
   allegiance of mainstream voters and the ability of major parties
-  to "hold their own".</p><a name="WhyProp" id="WhyProp"></a>
+  to "hold their own".</p>
 
+  <a name="WhyProp" id="WhyProp"></a>
   <h3>Why are you in favor of proportional representation?</h3>
 
   <p>I am not, entirely. I think there is much to be said for
@@ -775,8 +785,9 @@ Election Quota: 3064
   of a variety of methods that might or might not be appropriate
   depending on the circumstances, rather than as the optimal system
   in all cases. It is one tool in the toolbox, not a magic
-  bullet.</p><a name="Parties" id="Parties"></a>
+  bullet.</p>
 
+  <a name="Parties" id="Parties"></a>
   <h3>What is wrong with political parties?</h3>
 
   <p>Having read this far, you might get the impression that I am
@@ -811,8 +822,9 @@ Election Quota: 3064
   not have a formal role in either the nomination of candidates or
   in the operation of governmental institutions, which should
   represent all citizens, instead of just the majority party or
-  coalition.</p><a name="Free" id="Free"></a>
+  coalition.</p>
 
+  <a name="Free" id="Free"></a>
   <h2>Why are you giving it away?</h2>
 
   <p>While I believe that it is appropriate (though certainly not
@@ -829,12 +841,12 @@ Election Quota: 3064
   present the SAV algorithm to the public. Widespread
   adoption, or at least, discussion of this algorithm is, in this
   case, sufficient reward for my efforts, though monetary
-  contributions will certainly not be refused.</p><a name="Todos"
-  id="Todos"></a>
+  contributions will certainly not be refused.</p>
 
-  <h2>What remains to be done?</h2><a name="Testing" id=
-  "Testing"></a>
+  <a name="Todos" id="Todos"></a>
+  <h2>What remains to be done?</h2>
 
+  <a name="Testing" id= "Testing"></a>
   <h3>Testing</h3>
 
   <p>The "right way" to test this algorithm and to assess its
@@ -849,10 +861,10 @@ Election Quota: 3064
   endemic, results tend to be similar to those obtained by
   plurality voting. As partisanship becomes stronger, results
   look more like those associated with free list proportional
-  representation. That is what I expect.</p> 
+  representation. That is what I expect.</p>
 
   <p>One line of research I intend to pursue is to determine the extent
-     to which the order in which votes are counted affects the results.  I 
+     to which the order in which votes are counted affects the results.  I
      expect the effect to be minor, particularly if the number of votes is
      large, but if it is significant, then steps would need to be taken to
      mitigate it.</p>
@@ -873,9 +885,9 @@ Election Quota: 3064
 
   <p>Someday, should I have time to test SAV adequately, I might
   even publish a paper on my findings. In the meantime, I
-  would love to read any research others might do.</p><a name=
-  "Weights" id="Weights"></a>
+  would love to read any research others might do.</p>
 
+  <a name="Weights" id="Weights"></a>
   <h3>Weighted Voting.</h3>
 
   <p>For better or worse, voting in for-profit corporations is
@@ -893,9 +905,9 @@ Election Quota: 3064
   could insure that minority concerns are at least discussed.
   Such could be true, even if one person has a controlling
   interest. The majority still wins, but at least the
-  minority gets to participate in the discussion.</p><a name=
-  "Writein" id="Writein"></a>
+  minority gets to participate in the discussion.</p>
 
+  <a name="Writein" id="Writein"></a>
   <h3>Write-in Votes.</h3>
 
   <p>It should be possible to write in the names of persons for
@@ -903,9 +915,9 @@ Election Quota: 3064
   are acceptable, or others are deemed more suitable. This
   could be done by allowing a write-in code (maybe the number of
   official candidates, plus one) in the vote file, to be followed
-  by the name of the person "written in".</p><a name="none" id=
-  "none"></a>
+  by the name of the person "written in".</p>
 
+  <a name="none" id="none"></a>
   <h3>"None of the Above".</h3>
 
   <p>While desire to vote for "none of the above" is symptomatic of
@@ -940,17 +952,18 @@ Election Quota: 3064
   of seats being left vacant, pending a new election. That way, a
   vote for "none of the above" could be properly interpreted as
   preferring one or more vacancies to the election of any of the
-  existing candidates.</p><a name="Ties" id="Ties"></a>
+  existing candidates.</p>
 
+  <a name="Ties" id="Ties"></a>
   <h3>Resolution of Tie Votes.</h3>
 
   <p>I expect ties to be rare, but not unheard of. At
   present, ties are resolved by ranking candidates in the order
   they appear in the control deck. A random ordering could be
   used instead, or a random draw could be made at the time the tie
-  occurs. There may be other possibilities.</p><a name="FUI"
-  id="FUI"></a>
+  occurs. There may be other possibilities.</p>
 
+  <a name="FUI" id="FUI"></a>
   <h3>Friendlier User Interface.</h3>
 
   <p>The existing command line interface is portable, relatively
@@ -960,9 +973,9 @@ Election Quota: 3064
   experience with command lines or scripting, and are comfortable
   only with a GUI. A GUI front end with the ability to
   specify candidates and parameters, and possibly even to enter the
-  votes, might well be helpful for such users.</p><a name=
-  "EffAssign" id="EffAssign"></a>
+  votes, might well be helpful for such users.</p>
 
+  <a name= "EffAssign" id="EffAssign"></a>
   <h3>More Efficient Assignment.</h3>
 
   <p>It may be possible to reduce or eliminate the need for
@@ -977,9 +990,9 @@ Election Quota: 3064
   possibility would be to rank in ascending order of the number of
   candidates selected (singleton votes first). In either
   case, the least flexible votes are allocated first. There
-  may be other sorting orders that would work better.</p><a name=
-  "OtherIdeas" id="OtherIdeas" />
+  may be other sorting orders that would work better.</p>
 
+  <a name="Vacancies" id="Vacancies"/>
   <h3>How to Fill Vacancies.</h3>
   <p>
   While it is certainly possible to fill vacancies by simply holding a special
@@ -1011,12 +1024,14 @@ Election Quota: 3064
     special election and being easier to compute than a full rerun of the
     vote counting.</p>
 
+  <a name= "OtherIdeas" id="OtherIdeas" />
   <h3>Other Ideas Welcome.</h3>
 
   <p>I certainly do not have a monopoly on good ideas, and am
   willing to entertain any suggestions for improvement.</p>
 
-  <a name="SampleData" /><h2>Sample Data and Scripts</h2>
+  <a name="SampleData" />
+  <h2>Sample Data and Scripts</h2>
   <p>I have created some data for testing purposes that I include in the
      distribution.</p>
   <h3>Control Decks</h3>
