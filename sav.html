@@ -24,7 +24,7 @@
 <body>
   <h1>SAV Version 1.0</h1>
 
-  <p>Copyright &copy; 2009 John L. Ries.&nbsp; Permission to copy,
+  <p>Copyright &copy; 2009 John L. Ries. Permission to copy,
   distribute, and modify this program and accompanying
   documentation is granted under the terms of the <a href=
   "http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU
@@ -159,28 +159,24 @@
   <a name="Description" id="Description"></a>
   <h2>What is it?</h2>
 
-  <p>SAV stands for Single Allocated Vote, a form of <a href=
-  "#proprep">proportional representation</a> developed by John L.
-  Ries, beginning around 1995.&nbsp; It is a variant of <a href=
-  "#STV">Single Transferable Vote (STV)</a> that does not involve
-  ranking of candidates by voters.&nbsp; Instead, each voter
-  selects as many candidates as he likes (regardless of the number
-  of seats to be filled) without ranking them.&nbsp; The number of
-  persons voting for each candidate will be used to determine the
-  ranking.&nbsp; Thus, each person's vote will be credited to the
-  most popular candidate voted for, who actually needs that vote to
-  get elected.&nbsp; The number of votes required for election is
-  the Droop Quota, which is equal to the number of persons voting
-  in the election divided by one more than the number of seats to
-  be filled (rounded down to the nearest unit), plus one.</p>
+  <p><dfn>SAV</dfn> stands for <dfn>Single Allocated Vote</dfn>, a form of
+    <a href="#proprep">proportional representation</a> developed by John L. Ries, beginning around
+    1995. It is a variant of <a href="#STV">Single Transferable Vote (STV)</a> that does not involve
+    ranking of candidates by voters. Instead, each voter selects as many candidates as he likes
+    (regardless of the number of seats to be filled) without ranking them. The number of
+    persons voting for each candidate will be used to determine the ranking. Thus, each person's
+    vote will be credited to the most popular candidate voted for, who actually needs that vote to
+    get elected. The number of votes required for election is the <dfn>Droop Quota</dfn>, which is
+    equal to the number of persons voting in the election divided by one more than the number of
+    seats to be filled (rounded down to the nearest unit), plus one.</p>
 
-  <p>The program SAV is an implementation of this
-  algorithm.</p>
+  <p>The program SAV is an implementation of this algorithm.</p>
 
   <a name="Download" id="Download"/>
   <h2>Where do I get it?</h2>
 
-  <p>SAV is available on <a href="https://github.com/jlries61/SAV">Github</a></p>.
+  <p>SAV is available on <a href="https://github.com/jlries61/SAV">Github</a>.
+  </p>
 
   <a name="Installation" id="Installation"></a>
   <h2>How do I install it?</h2><a name="SysReq" id="SysReq"></a>
@@ -189,8 +185,8 @@
 
   <p>The program is written in Pascal and thus far has only been
   compiled with the <a href="http://www.gnu-pascal.org">GNU Pascal
-  Compiler (GPC)</a> under Linux.&nbsp; A makefile is provided which
-  should work on any UNIX or Linux system that has GPC installed.&nbsp;
+  Compiler (GPC)</a> under Linux. A makefile is provided which
+  should work on any UNIX or Linux system that has GPC installed.
   I may make binaries available for selected platforms, should I feel so
   inclined.  Since SAV does compile under GPC, it should be easily portable
   to any platform supported by GCC (just about everything current, except
@@ -216,25 +212,25 @@
     <li>Type "make"</li>
 
     <li>If it works, you should get an executable named "sav" (or
-    sav.exe on DOS/Windows).&nbsp; Try running the program without arguments; 
+    sav.exe on DOS/Windows). Try running the program without arguments; 
     you should get a useful help message.</li>
   </ol><a name="Install" id="Install"></a>
 
   <h3>Installing the SAV executable</h3>
 
   <p>This is very easy: just copy the executable into a directory
-  in the path like /usr/local/bin.&nbsp; You'll probably want to
+  in the path like /usr/local/bin. You will probably want to
   set the permissions so that everyone can execute it.</p><a name=
   "WhyPascal" id="WhyPascal"></a>
 
   <h3>Why is it written in Pascal?</h3>
 
   <p>Because it makes for more readible code, and is less prone to
-  obscure bugs than is C/C++.&nbsp; While it means that quite a few
+  obscure bugs than is C/C++. While it means that quite a few
   people would have to install a Pascal compiler in order to build
   from source code, I anticipate that in the future, GPC will be
   included in the GCC distribution and will thus be more readily
-  available.&nbsp; If not, I can always rewrite SAV in Ada
+  available. If not, I can always rewrite SAV in Ada
   :-).</p><a name="Use" id="Use"></a>
 
   <h2>How do I use it?</h2><a name="Quickstart" id=
@@ -254,15 +250,15 @@ Usage:
 sav &lt;control deck&gt; &lt;vote file&gt;
 </pre>
 
-  <p>The control deck will be a text file.&nbsp; The first line
+  <p>The control deck will be a text file. The first line
   will contain the number of seats to be filled, followed by the
   runoff field, which will be 1 if a runoff is permitted, and 0
-  otherwise.&nbsp; The remaining lines will contain the names of
+  otherwise. The remaining lines will contain the names of
   the candidates, one per line in the order of the indices used in
   the vote file.</p>
 
   <p>The vote file will be a text file, with one vote per
-  line.&nbsp; Each vote record will consist of the indices of the
+  line. Each vote record will consist of the indices of the
   candidates voted for, delimited by spaces.</p><a name=
   "ControlDeck" id="ControlDeck"></a>
 
@@ -294,20 +290,20 @@ Orville Offenbach (Water)
 
   <p>The record for each candidate can include party affiliation
   and whatever other data are required, but all are treated as part
-  of the name.&nbsp; SAV does not use candidates' party
+  of the name. SAV does not use candidates' party
   affiliations to determine allocation of seats.</p>
 
   <p>The "1" after the "5" in the first row indicates that a runoff
   will be required if fewer candidates receive the minimum number
   of votes required for election than there are seats to be
-  filled.&nbsp; In this case, twice as many candidates will qualify
+  filled. In this case, twice as many candidates will qualify
   for the runoff (if there are that many left) as there are seats
-  remaining to be filled.&nbsp; Not surprisingly, the top vote
+  remaining to be filled. Not surprisingly, the top vote
   getters not elected outright will be qualify for the runoff.</p>
 
   <p>Should the runoff field be set to "0", any seats remaining to
   be filled will be awarded to the top remaining
-  vote-getters.&nbsp; It is anticipated that the more seats there
+  vote-getters. It is anticipated that the more seats there
   are to be filled and the less fragmented the electorate, the less
   necessary runoffs would be.</p><a name="VoteFile" id=
   "VoteFile"></a>
@@ -315,12 +311,12 @@ Orville Offenbach (Water)
   <h3>The Vote File</h3>
 
   <p>The vote file is a text file, will one vote record per
-  line.&nbsp; Each vote record will consist of the indeces of the
-  candidates voted for, delimited by spaces.&nbsp; Each candidate's
+  line. Each vote record will consist of the indeces of the
+  candidates voted for, delimited by spaces. Each candidate's
   index is determined by the position of his name in the control
   deck, thus, if the sample control deck were used, Aaron Aargau is
   candidate number 1, Betty Beltran is candidate number 2,
-  etc.&nbsp; The indices can appear in any order on the line, as
+  etc. The indices can appear in any order on the line, as
   they are unranked.</p>
 
   <p>First few lines of an example vote file:</p>
@@ -334,15 +330,16 @@ Orville Offenbach (Water)
   <p>In this example, the first voter selected Daniel Davis (4),
   Betty Beltran (2), Aaron Aargau (1), Earl Effingham (5), Norman
   Nash (14), Kevin Klein (11), Isaac Ireland (9) and Fred Feldt
-  (6).&nbsp; The next voter selected Klein (11), John Jones (10),
-  Nash (14), Davis (4), Charles Carney (3), and Beltran (2).&nbsp;
+  (6). The next voter selected Klein (11), John Jones (10),
+  Nash (14), Davis (4), Charles Carney (3), and Beltran (2).
   Both of the first two voters selected more candidates than there
-  are seats to be filled; the next two selected fewer.&nbsp; In any
+  are seats to be filled; the next two selected fewer. In any
   case, each voter has only a single vote which will be credited to
   only one of the candidates for whom he voted; the fewer
-  candidates voted for, the more limited the choice.&nbsp; Blank
-  votes are ignored.&nbsp; Voting for all candidates has the same
-  practical effect as voting for none, .</p><a name="Results" id=
+  candidates voted for, the more limited the choice. Blank
+  votes are ignored. Voting for all candidates has the same
+    practical effect as voting for none (except that a vote
+    is ultimately credited to a candidate).</p><a name="Results" id=
   "Results"></a>
 
   <h3>Results</h3>
@@ -384,17 +381,17 @@ Election Quota: 1494
 +Qualified for runoff
 </pre>
 
-  <p>The "Raw vote" is the number of persons voting for the given
-  candidate; the "Allocation" is the number of votes credited to
-  that candidate.&nbsp; The sum of the allocations will always be
+  <p>The <dfn>raw vote</dfn> is the number of persons voting for the given
+  candidate. The <dfn>allocation</dfn> is the number of votes credited to
+  that candidate. The sum of the allocations will always be
   equal to the number of persons voting.</p>
 
   <p>In this example, three candidates: Nash, Jones, and Ireland,
-  are elected outright.&nbsp; The next four candidates, Higgins,
+  are elected outright. The next four candidates, Higgins,
   Carney, George, and Mullen qualify for a runoff to fill the
-  remaining two seats.&nbsp; When conducting the runoff, votes are
+  remaining two seats. When conducting the runoff, votes are
   scored in the same way as in the general election, except that
-  the runoff flag is set to 0.&nbsp; The new control deck would be
+  the runoff flag is set to 0. The new control deck would be
   as follows:</p>
   <pre>
 2 0
@@ -422,7 +419,7 @@ Election Quota: 3064
 </pre>
 
   <p>In the first example, if the runoff flag had been set to 0,
-  the top five finishers would have been elected outright.&nbsp;
+  the top five finishers would have been elected outright.
   You will notice that the fourth place finisher in the initial
   balloting (Higgins) ends up losing the runoff to both Carney, and
   George, who finished fourth and fifth (respectively) in the
@@ -432,11 +429,11 @@ Election Quota: 3064
   <h3>Technical Support</h3>
 
   <p>For now, I am willing to answer queries by e-mail (See my
-  <a href="https://github.com/jlries61">Github profile</a>).&nbsp;
+  <a href="https://github.com/jlries61">Github profile</a>).
   Should the volume become too great, I may consider starting a
   mailing list or forum. Not surprisingly, paid consulting gigs and
-  my regular job both get priority over free support.&nbsp;
-  Details are often important; clarity always is.&nbsp;
+  my regular job both get priority over free support.
+  Details are often important; clarity always is.
   The easier you make it for me to help you, the prompter
   the help is likely to be.</p><a name="Algorithm" id="Algorithm"></a>
 
@@ -447,13 +444,13 @@ Election Quota: 3064
   <p>Since the raw vote totals are used to determine the ranking of
   candidates, the first step is to count the number of persons
   voting for each candidate and the number of persons voting in the
-  election.&nbsp; These are used to calculate the Droop quota,
+  election. These are used to calculate the Droop quota,
   which is the number of votes required for
   election:</p><code>Quota:=(NVotes div (NSeats+1))+1;</code>
 
   <p>which is the minimum number of votes necessary to insure that
   it is mathematically impossible for more candidates to be elected
-  than there are seats to be filled.&nbsp; In the event of an
+  than there are seats to be filled. In the event of an
   election for a single seat, the quota will be an absolute
   majority (50%+1) of the persons voting.</p><a name="Alloc1" id=
   "Alloc1"></a>
@@ -461,17 +458,17 @@ Election Quota: 3064
   <h3>First Allocation</h3>
 
   <p>The next step is to allocate each of the votes cast to a
-  single candidate.&nbsp; This will be the candidates voted for
+  single candidate. This will be the candidates voted for
   with the largest raw vote, that has not yet reached quota, and
-  thus has already been elected.&nbsp; If all candidates voted for
+  thus has already been elected. If all candidates voted for
   have reached quota, the vote will be allocated to whichever one
   has the largest raw vote.</p>
 
   <p>Ties are currently broken in favor of the candidate that
-  appears first in the control deck.&nbsp; It is anticipated that
+  appears first in the control deck. It is anticipated that
   in the future, ties will be broken by a random draw, but at
   present, the order of candidates in the control deck can be
-  randomized, if desired.&nbsp; In any event, ties are highly
+  randomized, if desired. In any event, ties are highly
   unlikely, unless the number of persons voting is small.</p>
 
   <p>If, after this initial allocation, as many candidates reach
@@ -483,12 +480,12 @@ Election Quota: 3064
 
   <p>If not all seats are filled, the next step is to transfer
   votes from those candidates who have already achieved quota to
-  those that have not.&nbsp; This is done by sorting the candidates
+  those that have not. This is done by sorting the candidates
   in order of allocation and then transferring votes (if possible)
   from the candidate with the highest allocation who has already
   reached quota, to the candidate voted for with the highest raw
-  vote that has not yet reached quota (if any).&nbsp; The
-  candidates are re-sorted after each transfer.&nbsp; The process
+  vote that has not yet reached quota (if any). The
+  candidates are re-sorted after each transfer. The process
   stops when either all seats are filled, or there are no more
   votes that can be transfered.</p><a name="FinalAlloc" id=
   "FinalAlloc"></a>
@@ -499,35 +496,35 @@ Election Quota: 3064
   remaining to be filled, the next step is to transfer as many
   votes as possible from the candidates with the smallest
   allocations to the candidates with larger allocations that have
-  not yet reached quota.&nbsp; This is done by "eliminating" the
+  not yet reached quota. This is done by "eliminating" the
   candidate still under consideration with the smallest allocation
   and then transferring as many votes as possible from that
   candidate to the candidate voted for with the highest raw vote
-  that has not yet either reached quota, or been eliminated.&nbsp;
+  that has not yet either reached quota, or been eliminated.
   If no more votes can be transferred from that candidate, the
   candidate with the next smallest allocation is eliminated and the
-  process continues.&nbsp; The process ends when either all seats
+  process continues. The process ends when either all seats
   have been filled, or all candidates have either reached quota or
   been eliminated.</p><a name="AwardSeats" id="AwardSeats"></a>
 
   <h3>Awarding of Seats</h3>
 
   <p>Seats are awarded to the candidates that have reached
-  quota.&nbsp; If, after processing is complete, there are still
+  quota. If, after processing is complete, there are still
   fewer candidates elected than there are seats to be filled,
   either the remaining candidates with the largest allocations can
   simply be declared elected without a runoff, or a runoff can be
   held between the remaining candidates (up to twice as many as
   there are seats remaining to be filled) with the largest
-  allocations.&nbsp; Ties in either event are, at this point,
+  allocations. Ties in either event are, at this point,
   resolved first in favor of the candidates with the largest
   numbers of raw votes, and then in favor the candidates first
-  listed in the control deck.&nbsp; A random draw may be
+  listed in the control deck. A random draw may be
   implemented instead in later versions of the program.</p>
 
   <p>For informational purposes, the percentage of those voting who
   selected one or more winning candidates is calculated and
-  displayed.&nbsp; This will almost always be higher than if the
+  displayed. This will almost always be higher than if the
   seats were awarded in accordance to plurality, usually much
   higher, unless the number of seats contested is small (ie. one or
   two).</p><a name="Why" id="Why"></a>
@@ -542,40 +539,40 @@ Election Quota: 3064
   "#incomplete_list">incomplete list systems</a>, SAV guarantees
   that seats will be awarded to competing parties or factions
   roughly in proportion to their support among the
-  electorate.&nbsp; Unlike winner-take-all systems (including
+  electorate. Unlike winner-take-all systems (including
   <a href="#plurality">plurality</a> systems, such as those used 
   in the US, Canada and the
   UK), SAV makes it nearly impossible for any faction to win a
   majority in an elective body without majority support (barring
-  unequally apportioned constituencies).&nbsp; Plurality voting allows
+  unequally apportioned constituencies). Plurality voting allows
   a party or faction to win a majority with as little
   as one third of the vote, if the opposition is severely
   fragmented.</p><a name="HowProp" id="HowProp"></a>
 
   <h4>How is it proportional?</h4>
 
-  <p>Caveat: It's not, unless the number of seats per <a href=
+  <p>Caveat: It is not, unless the number of seats per <a href=
   "#constituency">constituency</a> (district) is sufficiently
   high.</p>
 
   <p>SAV, like <a href="#STV">Single Transferrable Vote (STV)</a>,
   seeks to evenly divide the electorate among as many candidates as
-  there are seats to be filled.&nbsp; Since each voter has a single
+  there are seats to be filled. Since each voter has a single
   vote, the votes credited to each candidate represent (in theory)
   a different segment of the electorate.</p><a name="NonPartisan"
   id="NonPartisan"></a>
 
   <h3>It is Officially Non-Partisan.</h3>
 
-  <p>SAV completely ignores party affiliations of candidates.&nbsp;
+  <p>SAV completely ignores party affiliations of candidates.
   This allows voters to divide their votes among candidates of
-  competing parties as they see fit.&nbsp; It also allows
+  competing parties as they see fit. It also allows
   independent candidates to compete on the same basis as partisan
-  ones.&nbsp; SAV can even be used in officially non-partisan
+  ones. SAV can even be used in officially non-partisan
   elections, and will award seats among whatever factions (to
   include social classes and religious and ethnic groupings) divide
   the voting population, even if they cut across formal party
-  groupings, and even if formal party groupings do not exist.&nbsp;
+  groupings, and even if formal party groupings do not exist.
   It is even appropriate for use by clubs, corporations, and other
   private organizations where party affiliation is, or should be
   irrelevant.</p><a name="Dispolar" id="Dispolar"></a>
@@ -584,8 +581,8 @@ Election Quota: 3064
 
   <p>By awarding votes to the candidates with the broadest support
   in each faction, SAV rewards efforts to appeal to voters across
-  party and factional lines.&nbsp; Conversely, candidates with
-  narrow bases of support are penalized.&nbsp; This is in contrast
+  party and factional lines. Conversely, candidates with
+  narrow bases of support are penalized. This is in contrast
   to <a href="#STV">STV (Single Transferrable Vote)</a>, which
   tends to favor the candidates within each faction with the most
   enthusiastic followings, and <a href="#closed_list">party list
@@ -593,12 +590,12 @@ Election Quota: 3064
   electorate along party lines, discouraging cooperation between
   politicians and voters of different factions on matters where
   they agree, except as necessary to secure majority support for a
-  given proposal, which is often difficult.&nbsp;</p>
+  given proposal, which is often difficult.</p>
 
   <p>Furthermore, <a href="#plurality">plurality</a> at-large
   systems, which are often used in local government, often increase
   polarization by making it possible to shut out the opposition,
-  thus putting a premium on cut-throat tactics.&nbsp; SAV, by
+  thus putting a premium on cut-throat tactics. SAV, by
   making it more difficult to shut out minority factions, will tend
   to reduce the motivation for cut-throat politics, thus allowing
   politicians and voters with differing opinions to more peacefully
@@ -609,10 +606,10 @@ Election Quota: 3064
 
   <p>Since voting is for individual candidates, instead of for
   party slates, candidates are directly accountable to the voters,
-  instead of being primarily accountable to their parties.&nbsp;
+  instead of being primarily accountable to their parties.
   The biggest problem with slate voting is that it makes elected
   officials more accountable to their parties than they are to the
-  voters they theoretically represent.&nbsp; The problem is
+  voters they theoretically represent. The problem is
   compounded by <a href="#closed_list">closed list systems</a> that
   allow parties to order the candidates by preference, thus
   rewarding party loyalty and seniority, and making the individuals
@@ -635,77 +632,77 @@ Election Quota: 3064
 
   <p>Balloting takes place in the same way as in a <a href=
   "#plurality">plurality</a> election, except that no limit on the
-  number of candidates voted for need be imposed.&nbsp; Elections
+  number of candidates voted for need be imposed. Elections
   conducted on the basis of <a href="#STV">single transferable
   voting (STV)</a> require voters to rank the candidates, and it
-  often takes days before results are known.&nbsp; Assuming that
-  ballots are in a form that is easy to scan electronically, 
+  often takes days before results are known. Assuming that
+  ballots are in a form that is easy to scan electronically,
   votes could be
   rapidly read for processing by SAV, and results published the
   same day.</p><a name="twoparty" id="twoparty"></a>
 
   <h3>Won't This Undermine the Two Party System?</h3>
 
-  <p>Maybe.&nbsp; <a href="#plurality">Plurality</a> voting systems
+  <p>Maybe. <a href="#plurality">Plurality</a> voting systems
   strongly discriminate against independent and minor party
-  candidates.&nbsp; Voters are discouraged from supporting such
+  candidates. Voters are discouraged from supporting such
   candidates on the theory that they "can't win", and that any
-  votes for them are "wasted".&nbsp; On the other hand, I doubt
+  votes for them are "wasted". On the other hand, I doubt
   that a two party system that survives only through intimidation
-  is really worth having.&nbsp; Furthermore, there is nothing in
+  is really worth having. Furthermore, there is nothing in
   SAV that prevents the electorate from voting overwhelmingly for
   major party candidates, should that be their true
   inclination.</p>
 
   <p>In addition, plurality voting systems are not always enough to
   prevent the splintering of the electorate among multiple
-  parties.&nbsp; Although one party almost always wins a majority
+  parties. Although one party almost always wins a majority
   of seats in the British House of Commons (and thus, the privilege
   of forming the government), that party almost never has majority
-  support among the electorate.&nbsp; Indeed, while the
+  support among the electorate. Indeed, while the
   Conservative and Labour Parties together normally win the vast
   majority of the seats, and even a comfortable majority of the
   votes, the Liberal Party (now the Liberal Democratic Party) has
   always attracted considerable support and at least a few seats
-  (now a substantial number).&nbsp; In addition, regional parties
+  (now a substantial number). In addition, regional parties
   now command the support of a growing number of voters and win
-  increasing numbers of seats.&nbsp; All this is true in spite of
+  increasing numbers of seats. All this is true in spite of
   the fact that elections are conducted by plurality voting in
-  single member constituencies.&nbsp; The same trend is occuring in
+  single member constituencies. The same trend is occuring in
   Canada, where four parties now routinely win seats in the House
   of Commons, despite the fact that members are elected by
-  plurality vote from single member constituencies.&nbsp; As of
+  plurality vote from single member constituencies. As of
   this writing (April, 2009), the last three federal Parliamentary
   elections in Canada have resulted in minority governments.</p>
 
   <p>Even in the USA, candidates are sometimes elected over the
   opposition of most voters because the opposition is
-  divided.&nbsp; Elected officials chosen on this basis often enjoy
+  divided. Elected officials chosen on this basis often enjoy
   less legitimacy in the eyes of voters than those with majority
-  support, and are therefore often less effective.&nbsp;
+  support, and are therefore often less effective.
   Furthermore, I suspect that efforts to win elections by dividing
   the opposition, instead of by winning majority support, tend to
   undermine public confidence in elections, thus alienating the
   people, without whose support representative government is
-  impossible.&nbsp; Again, even in the USA, it is becoming more
+  impossible. Again, even in the USA, it is becoming more
   common for no candidate to win a popular majority in the
   presidential election, due largely to increased dissatisfaction
-  with the major parties.&nbsp; In three of the last five US
+  with the major parties. In three of the last five US
   presidential elections (1992-2008), the winning candidate was
   elected with less than a majority of the popular vote.</p>
 
   <p>Another problem that often occurs in single member
   constituency systems is that many constituencies are "safe" for
-  one party or another.&nbsp; In such cases, the nomination of the
+  one party or another. In such cases, the nomination of the
   dominant party is tantamount to election, discouraging voter
-  participation and reducing accountability.&nbsp; In addition, the
+  participation and reducing accountability. In addition, the
   once disreputable practice of gerrymandering has gained great
-  favor in the USA in recent years.&nbsp; As of the time of this
+  favor in the USA in recent years. As of the time of this
   writing, election districts for the US Congress and state
   Legislature in California are so drawn as to virtually insure the
   election of the candidate of a particular party in nearly all of
-  them.&nbsp; This was deliberately done to minimize the possiblity
-  of seats shifting from one party to another.&nbsp;</p><a name=
+  them. This was deliberately done to minimize the possiblity
+  of seats shifting from one party to another.</p><a name=
   "Effect" id="Effect"></a>
 
   <h3>What would this do to my party?</h3>
@@ -742,14 +739,14 @@ Election Quota: 3064
 
   <h3>Why are you in favor of proportional representation?</h3>
 
-  <p>I am not, entirely.&nbsp; I think there is much to be said for
+  <p>I am not, entirely. I think there is much to be said for
   majority voting, particularly the fact that it forces candidates
   to appeal to the majority of the electorate, rather than to a
-  narrow fraction.&nbsp; Majority voting is also a lot simpler and
+  narrow fraction. Majority voting is also a lot simpler and
   more intuitive than are most systems of proportional
   representation, and makes it easier to hold individual
   politicians accountable than does any system of proportional
-  representation, SAV included.&nbsp; Combined with single member
+  representation, SAV included. Combined with single member
   constituencies, it greatly reduces the number of elected
   officials of whom voters need to keep track, allowing such voters
   to make more informed judgments regarding individual
@@ -759,11 +756,11 @@ Election Quota: 3064
   proportional representation, such as SAV, offers a number of
   advantages, especially when the electorate is polarized on party,
   class, regional, or ethnic lines, or in situations where one
-  party is dominant.&nbsp; I think SAV would be an enormous
+  party is dominant. I think SAV would be an enormous
   improvement over the plurality at-large system typically employed
   in municipal elections, or the plurality multimember consituency
   system employed in elections to some state legislative bodies
-  (such as the New Hampshire House of Representatives).&nbsp; As
+  (such as the New Hampshire House of Representatives). As
   noted before, proportional systems are resistant to
   gerrymandering, and make it easier to elect representatives on a
   the basis of natural regional groupings, rather than from
@@ -774,18 +771,18 @@ Election Quota: 3064
   bicameral legislature from single member constuencies by majority
   vote (instead of plurality), and the other on a regional basis
   using SAV, or to elect a unicameral assembly partly one way, and
-  partly the other.&nbsp; In any event, SAV should be seen as one
+  partly the other. In any event, SAV should be seen as one
   of a variety of methods that might or might not be appropriate
   depending on the circumstances, rather than as the optimal system
-  in all cases.&nbsp; It is one tool in the toolbox, not a magic
+  in all cases. It is one tool in the toolbox, not a magic
   bullet.</p><a name="Parties" id="Parties"></a>
 
   <h3>What is wrong with political parties?</h3>
 
   <p>Having read this far, you might get the impression that I am
   less than sympathetic to partisan politics and you would be
-  correct.&nbsp; I wrote an essay several years ago in which I
-  discussed at length the reasons for this aversion.&nbsp; Suffice
+  correct. I wrote an essay several years ago in which I
+  discussed at length the reasons for this aversion. Suffice
   it to say here that I view political parties as unnecessary
   intermediaries between the people and their elected leaders, that
   they enforce false dichotomies by packaging together sets of
@@ -799,18 +796,18 @@ Election Quota: 3064
   to a predetermined orthodoxy the price for meaningful
   participation in the political system (if not for retaining one's
   employment, staying out of prison, or maybe even staying
-  alive).&nbsp; Political parties may be inevitable (or not) in a
+  alive). Political parties may be inevitable (or not) in a
   system of government based on free elections, but at their best,
   they are advocacy organizations formed by groups of like minded
   citizens for the purpose of promoting particular policies and
-  candidates for public office.&nbsp; This role does not require
+  candidates for public office. This role does not require
   that they control the nomination of candidates for office, that
   parliamentary bodies be organized along party lines, or that
   executives make party affiliation or loyalty leading criteria for
-  appointing or dismissing their subordinates.&nbsp; Let parties make
+  appointing or dismissing their subordinates. Let parties make
   such recommendations to voters and elected officials as they
   think best, and then allow them to follow their own consciences
-  without fear of recrimination.&nbsp; Parties do not need and should
+  without fear of recrimination. Parties do not need and should
   not have a formal role in either the nomination of candidates or
   in the operation of governmental institutions, which should
   represent all citizens, instead of just the majority party or
@@ -822,14 +819,14 @@ Election Quota: 3064
   mandatory) to sell most software on a proprietary basis, software
   that performs sensitive public functions (like scoring elections)
   requires a degree of public confidence that can only be achieved
-  by opening the source code to public inspection.&nbsp; The use of
+  by opening the source code to public inspection. The use of
   open source software to score elections eliminates a major
-  potential source of election fraud, error, and controversy.&nbsp;
+  potential source of election fraud, error, and controversy.
   Such will always be a danger with closed source software, no
   matter how honest the developer, or the administrator.</p>
 
   <p>In addition, my primary purpose in writing this program is to
-  present the SAV algorithm to the public.&nbsp; Widespread
+  present the SAV algorithm to the public. Widespread
   adoption, or at least, discussion of this algorithm is, in this
   case, sufficient reward for my efforts, though monetary
   contributions will certainly not be refused.</p><a name="Todos"
@@ -842,40 +839,40 @@ Election Quota: 3064
 
   <p>The "right way" to test this algorithm and to assess its
   impact on elections where it is used, would be to test it on real
-  election data.&nbsp; The problem is that combinations of votes
+  election data. The problem is that combinations of votes
   cast in previous elections are rarely, if ever, saved,
   particularly here in the USA, where nearly all elections are
-  decided by either plurality or majority vote.&nbsp; I have
+  decided by either plurality or majority vote. I have
   created some artificial data sets, which attempt to simulate
-  voting with varying degrees of partisanship.&nbsp; Not
+  voting with varying degrees of partisanship. Not
   surprisingly, where party loyalty is weak and ticket splitting
   endemic, results tend to be similar to those obtained by
-  plurality voting.&nbsp; As partisanship becomes stronger, results
+  plurality voting. As partisanship becomes stronger, results
   look more like those associated with free list proportional
-  representation.&nbsp; That is what I expect.</p> 
+  representation. That is what I expect.</p> 
 
   <p>One line of research I intend to pursue is to determine the extent
      to which the order in which votes are counted affects the results.  I 
      expect the effect to be minor, particularly if the number of votes is
-     large, but if it's significant, then steps would need to be taken to
+     large, but if it is significant, then steps would need to be taken to
      mitigate it.</p>
 
   <p>Results from previous elections in California (and presumably
-  other states) are available aggregated by precinct.&nbsp; Such
+  other states) are available aggregated by precinct. Such
   data could be used to create artificial voting data with
-  by-candidate totals matching those recorded.&nbsp; Such data
+  by-candidate totals matching those recorded. Such data
   could be constructed with varying assumptions about the level of
-  partisanship.&nbsp; I have not attempted to use such data, but I
+  partisanship. I have not attempted to use such data, but I
   hope to do so in the near future.</p>
 
   <p>Should "real" data be available somewhere (maybe from STV
   jurisdictions like Ireland or Australia), I would love to try SAV
-  on them.&nbsp; Such real data could also include results from
+  on them. Such real data could also include results from
   elections to the governing board of your favorite club or
   volunteer organization.</p>
 
   <p>Someday, should I have time to test SAV adequately, I might
-  even publish a paper on my findings.&nbsp; In the meantime, I
+  even publish a paper on my findings. In the meantime, I
   would love to read any research others might do.</p><a name=
   "Weights" id="Weights"></a>
 
@@ -883,19 +880,19 @@ Election Quota: 3064
 
   <p>For better or worse, voting in for-profit corporations is
   conducted on a weighted basis, each voter typically having as
-  many votes as he has shares of stock.&nbsp; I believe that
+  many votes as he has shares of stock. I believe that
   corporations could benefit by affording a broader range of
   stockholder representation on their boards than is now usually
   done (interest in such things even crops up in the news
-  occasionally).&nbsp; Since, under the usual winner-take-all
+  occasionally). Since, under the usual winner-take-all
   system, corporate boards are nominated by a controlling faction,
   and ratified by the stockholders with little or no opposition, it
   is easy for such boards to become rubber stamps for management,
-  which they often are.&nbsp; A more broadly representative board
+  which they often are. A more broadly representative board
   of directors could more effectively supervise the management, and
-  could insure that minority concerns are at least discussed.&nbsp;
+  could insure that minority concerns are at least discussed.
   Such could be true, even if one person has a controlling
-  interest.&nbsp; The majority still wins, but at least the
+  interest. The majority still wins, but at least the
   minority gets to participate in the discussion.</p><a name=
   "Writein" id="Writein"></a>
 
@@ -903,7 +900,7 @@ Election Quota: 3064
 
   <p>It should be possible to write in the names of persons for
   whom one wishes to vote, either because none of the ones listed
-  are acceptable, or others are deemed more suitable.&nbsp; This
+  are acceptable, or others are deemed more suitable. This
   could be done by allowing a write-in code (maybe the number of
   official candidates, plus one) in the vote file, to be followed
   by the name of the person "written in".</p><a name="none" id=
@@ -915,22 +912,22 @@ Election Quota: 3064
   insufficiently competitive elections, and should be lessened by
   the greater competition afforded by systems such as SAV, it may
   still be a good idea to offer the option as a way to "keep the
-  big boys honest".&nbsp; Under SAV, a vote for "none of the above"
+  big boys honest". Under SAV, a vote for "none of the above"
   (probably represented by a zero), combined with no votes for
   actual candidates, would increase the number of votes cast,
   without increasing the number of votes recorded for actual
-  candidates.&nbsp; This would have the effect of raising the quota
-  and thus making it harder to win election outright.&nbsp; If
+  candidates. This would have the effect of raising the quota
+  and thus making it harder to win election outright. If
   "none of the above" were to receive enough votes to reach quota
   (assuming a single round election), a proportionate number of
   seats would be declared vacant, and a new election would have to
   be called to fill them, from which all candidates running in the
-  current election would be disqualified.&nbsp; In a two round
+  current election would be disqualified. In a two round
   election, greater numbers of "none of the above" votes would make
   it more difficult for the leading candidates to reach quota, but
   the candidates qualifying for the runoff would have an additional
   opportunity to win over dissaffected voters before seats are
-  declared vacant, or existing candidates are disqualified.&nbsp;
+  declared vacant, or existing candidates are disqualified.
   Of course, a "none of the above" vote should be ignored, if
   combined with votes for existing candidates</p>
 
@@ -938,7 +935,7 @@ Election Quota: 3064
   to find at least one suitable candidate on the ballot, or to
   write in the names of one or more persons they do find suitable,
   than it is for them to simply reject all candidates
-  outright.&nbsp; Thus, the penalty for large numbers of people
+  outright. Thus, the penalty for large numbers of people
   voting for "none of the above" should be a proportionate number
   of seats being left vacant, pending a new election. That way, a
   vote for "none of the above" could be properly interpreted as
@@ -947,11 +944,11 @@ Election Quota: 3064
 
   <h3>Resolution of Tie Votes.</h3>
 
-  <p>I expect ties to be rare, but not unheard of.&nbsp; At
+  <p>I expect ties to be rare, but not unheard of. At
   present, ties are resolved by ranking candidates in the order
-  they appear in the control deck.&nbsp; A random ordering could be
+  they appear in the control deck. A random ordering could be
   used instead, or a random draw could be made at the time the tie
-  occurs.&nbsp; There may be other possibilities.</p><a name="FUI"
+  occurs. There may be other possibilities.</p><a name="FUI"
   id="FUI"></a>
 
   <h3>Friendlier User Interface.</h3>
@@ -959,9 +956,9 @@ Election Quota: 3064
   <p>The existing command line interface is portable, relatively
   easy to program, and easily incorporated into scripts, but
   interactive, graphical user interfaces (GUIs) have become the
-  standard.&nbsp; Indeed, most computer users now have little or no
+  standard. Indeed, most computer users now have little or no
   experience with command lines or scripting, and are comfortable
-  only with a GUI.&nbsp; A GUI front end with the ability to
+  only with a GUI. A GUI front end with the ability to
   specify candidates and parameters, and possibly even to enter the
   votes, might well be helpful for such users.</p><a name=
   "EffAssign" id="EffAssign"></a>
@@ -969,23 +966,23 @@ Election Quota: 3064
   <h3>More Efficient Assignment.</h3>
 
   <p>It may be possible to reduce or eliminate the need for
-  re-assignment of votes if they are sorted properly.&nbsp; One
+  re-assignment of votes if they are sorted properly. One
   idea is, after tabulating the raw votes, sorting the votes in
   reverse order of the popularity of the candidates voted
-  for.&nbsp; Thus, votes cast only for the least popular candidate
+  for. Thus, votes cast only for the least popular candidate
   would go first, followed by votes only for the second least
   popular candidate, followed by votes for both of the two least
-  popular candidates, etc.&nbsp; Votes cast for all candidates
-  (assignable to any of them) would go last.&nbsp; Another
+  popular candidates, etc. Votes cast for all candidates
+  (assignable to any of them) would go last. Another
   possibility would be to rank in ascending order of the number of
-  candidates selected (singleton votes first).&nbsp; In either
-  case, the least flexible votes are allocated first.&nbsp; There
+  candidates selected (singleton votes first). In either
+  case, the least flexible votes are allocated first. There
   may be other sorting orders that would work better.</p><a name=
   "OtherIdeas" id="OtherIdeas" />
 
   <h3>How to Fill Vacancies.</h3>
   <p>
-  While it's certainly possible to fill vacancies by simply holding a special
+  While it is certainly possible to fill vacancies by simply holding a special
   election, it would, in all likelihood, throw proportionality out the window.
   Therefore, it seems a good idea to devise a mechanism for filling vacancies
   more in keeping with the spirit of SAV.  One possibility would be
@@ -1020,7 +1017,7 @@ Election Quota: 3064
   willing to entertain any suggestions for improvement.</p>
 
   <a name="SampleData" /><h2>Sample Data and Scripts</h2>
-  <p>I have created some data for testing purposes that I include in the 
+  <p>I have created some data for testing purposes that I include in the
      distribution.</p>
   <h3>Control Decks</h3>
   <dl>
@@ -1034,61 +1031,59 @@ Election Quota: 3064
         single ballot).</dd></dl>
     <h3>Scripts, vote files, and output</h3>
     <p>I created ten vote files, each representing a different voting scenario.
-       For each file (votes*.txt), there is a Perl script that created it
-       (votes*.pl), an output file showing the results (votes*.out), and
+       For each file (<tt>votes*.txt</tt>), there is a Perl script that created it
+       (<tt>votes*.pl</tt>), an output file showing the results (<tt>votes*.out</tt>), and
        in most cases, a short file showing the proportion of votes for our
-       three hypothetical parties (votes*.split).  Assuming you have Perl 
+       three hypothetical parties (<tt>votes*.split</tt>).  Assuming you have Perl
        installed, you can recreate a vote file by rerunning the script.  For
        example:</p>
     <code>$ perl votes3.pl &gt;votes3.split</code>
-    <p>It is recommended that votes1.txt and votes2.txt not be regenerated, as
+    <p>It is recommended that <tt>votes1.txt</tt> and <tt>votes2.txt</tt> not be regenerated, as
        they are the examples used in this document.</p>
     <dl>
       <dt>votes1.txt</dt>
-      <dd>The basic scenario shown in this document. 
+      <dd>The basic scenario shown in this document.
           Five candidates from each of three parties
-          (fifteen in all) competing for five seats. 10,000 voters, each 
+          (fifteen in all) competing for five seats. 10,000 voters, each
           voting for between one and ten candidates, determined randomly.
-          The candidates voted for are determined at random, 
+          The candidates voted for are determined at random,
           each being equally likely, regardless of party.</dd>
       <dt>votes2.txt</dt>
-      <dd>Runoff election following votes1.txt (shown in this document).
-          The control deck used is ctldeck2.txt.  The script votes2.pl
+      <dd>Runoff election following <tt>votes1.txt</tt> (shown in this document).
+          The control deck used is <tt>ctldeck2.txt</tt>.  The script <tt>votes2.pl</tt>
           assumes that each person who voted for one or more finalists
-          on the first ballot will also vote for him/her/them on the
+          on the first ballot will also vote for them on the
           second ballot.  Otherwise, candidate selection is purely random,
-          with each voter selecting between one and three candidates.</dd> 
+          with each voter selecting between one and three candidates.</dd>
       <dt>votes2a.txt</dt>
-      <dd>Alternative runoff setup using ctldeck2a.txt.&nbsp;  Here, the 
-          candidate
-          indices are the same as they were on the initial ballot.</dd>
+      <dd>Alternative runoff setup using <tt>ctldeck2a.txt</tt>.  Here, the
+          candidate indices are the same as they were on the initial ballot.</dd>
       <dt>votes2b.txt</dt>
-      <dd>Alternative runoff setup using ctldeck2a.txt.&nbsp;  Here, the 
-          only votes
+      <dd>Alternative runoff setup using <tt>ctldeck2a.txt</tt>.  Here, the only votes
           cast are those cast for runoff finalists on the first ballot.</dd>
       <dt>votes3.txt</dt>
       <dd>Assume that the probability of a voter aligned with a party supporting
-          any given nominee of that party is 95% and that 10% of voters are 
+          any given nominee of that party is 95% and that 10% of voters are
           independent and will vote without regard for party affiliation.
-          Party alignment for each voter is determined by random draw, and 
+          Party alignment for each voter is determined by random draw, and
           then candidates voted for by each person are determined.  This,
-          and all subsequent voting scenarios use ctldeck.txt.</dd>
+          and all subsequent voting scenarios use <tt>ctldeck.txt</tt>.</dd>
       <dt>votes4.txt</dt>
-      <dd>Drawn in the same fashion as votes3.txt, except for the additional
+      <dd>Drawn in the same fashion as <tt>votes3.txt</tt>, except for the additional
           assumption that the probability of a given party aligned voter voting
           "straight ticket" is 30%.</dd>
       <dt>votes5.txt</dt>
-      <dd>Drawn in the same fashion as votes4.txt, except that the probability
+      <dd>Drawn in the same fashion as <tt>votes4.txt</tt>, except that the probability
           of a "straight ticket" vote is increased from 30% to 50%.</dd>
       <dt>votes6.txt</dt>
-      <dd>Drawn in the same fashion as votes5.txt, except that base party 
-          alignment probabilities are determined by random draw (no longer 
+      <dd>Drawn in the same fashion as <tt>votes5.txt</tt>, except that base party
+          alignment probabilities are determined by random draw (no longer
           equal).</dd>
       <dt>votes7.txt</dt>
-      <dd>Drawn in the same fashion as votes6.txt, except that the party 
+      <dd>Drawn in the same fashion as <tt>votes6.txt</tt>, except that the party
           loyalty probability is reduced from 95% to 50%.</dd>
       <dt>votes8.txt</dt>
-      <dd>Drawn in the same fashion as votes7.txt, except that the "straight
+      <dd>Drawn in the same fashion as <tt>votes7.txt</tt>, except that the "straight
           ticket" probability is reduced from 50% to 25%.</dd>
       </dl>
 
@@ -1105,16 +1100,16 @@ Election Quota: 3064
       <p>One of a class of election systems designed to choose
       candidates from different parties or other fractions of the
       electorate in proportion to the number of votes their
-      candidates received.&nbsp; Western European and Latin
+      candidates received. Western European and Latin
       American parliamentary elections almost always employ some
       form of proportional representation in multimember
       constituencies (or at large), sometimes mixed with plurality or
-      majority voting in single member constituencies.&nbsp; Such
+      majority voting in single member constituencies. Such
       systems are more representative of public opinion overall
       than are majoritarian ones, but usually at the cost of
       political fragmentation, increased partisanship, and reduced
       individual accountability of those elected (which SAV is
-      designed to minimize).&nbsp; In most representative bodies
+      designed to minimize). In most representative bodies
       chosen by proportional representation, it is rare for any one
       party to hold a majority of the seats, requiring parties to
       form coalitions in order to govern effectively, or even to
@@ -1127,17 +1122,17 @@ Election Quota: 3064
     <dd>
       <p>The practice of declaring elected the candidate(s) with
       the largest number of votes, even if supported by only a
-      minority of voters.&nbsp; This is most common in English
+      minority of voters. This is most common in English
       speaking countries, but is also frequently used
-      elsewhere.&nbsp; It effectively discourages voting for
+      elsewhere. It effectively discourages voting for
       candidates deemed unlikely to win plurality support, thus
       discouraging political splintering, but also often leading to
       rule by the largest or best organized minority, rather than
-      by the majority.&nbsp; Plurality voting is most often done in
+      by the majority. Plurality voting is most often done in
       constituencies where only one person is elected at a time,
       but is also sometimes employed in multimember constituencies,
       and often at large, such as in US municipal council
-      elections.&nbsp; Plurality voting systems usually require
+      elections. Plurality voting systems usually require
       that voters select no more candidates than there are seats to
       be filled, but this is not strictly necessary, and systems
       allowing votes for more candidates than there are seats to be
@@ -1158,40 +1153,39 @@ Election Quota: 3064
         US municipal councillors at large.
         </p>
 
-      <p>US Presidential Electors are, in nearly all states, and in
+      <p>US Presidential Electors are, in nearly all states and in
       the District of Columbia, elected as slates of candidates
       pledged to vote for a particular pairing of candidates for
-      President and Vice President.&nbsp; The slate that wins the
+      President and Vice President. The slate that wins the
       largest number of votes in a given state is normally awarded
-      all that state's Electors.&nbsp; The Electors then formally
+      all that jurisdiction's Electors. The Electors then formally
       elect the President and Vice President by majority vote, but
-      the result has been a foregone conclusion in every US
-      presidential election held since 1876.</p>
+      the result is almost always a foregone conclusion.</p>
     </dd>
 
-    <dt>Majority voting</dt>
+    <dt>Majority Voting</dt>
 
     <dd>
       <p>The practice of requiring a majority of votes for
-      election.&nbsp; If fewer candidates win majority support than
+      election. If fewer candidates win majority support than
       there are seats to be filled, a runoff is usually held
-      between the highest remaining vote-getters.&nbsp; This is
+      between the highest remaining vote-getters. This is
       most common in France and eastern Europe, and in Latin
-      American presidential elections.&nbsp; If a majority is
+      American presidential elections. If a majority is
       required for election, voters feel more free to support their
       most preferred candidates (at least in the first round), even
       if they are deemed unlikely to win, while the sort of
       political splintering common under proportional
       representation is still discouraged, and candidates typically
-      run as individuals, instead of as party slates.&nbsp; Unlike
+      run as individuals, instead of as party slates. Unlike
       plurality voting systems, majority voting systems make it
       difficult for one party to win a majority of the seats in a
       representative assembly without majority support among the
-      voting population.&nbsp; However, runoffs are often required,
+      voting population. However, runoffs are often required,
         increasing the time and cost of administering elections.</p>
 
       <p>Under <dfn>Alternative Voting</dfn>, voters are permitted
-        to rank the candidates in order of prederence and if no
+        to rank the candidates in order of preference and if no
         candidate receives a majority of the first place votes,
         the votes of the least popular candidates can be transfered
         to more popular ones in accordance with the wishes of individual
@@ -1200,8 +1194,9 @@ Election Quota: 3064
         single candidate is elected per constituency.  The President
         of the Irish Republic and members of the Australian House of
         Representatives are elected in this fashion.  This procedure
-        is often called "Instant Runoff Voting" (IRV) in the USA, where
-        it is sometimes advocated as a replacement for plurality voting.</p>
+        is often called <dfn>Instant Runoff Voting (IRV)</dfn> in the USA,
+        where it is sometimes advocated as a replacement for plurality
+        voting.</p>
     </dd>
 
     <dt>Incomplete voting systems (Limited Voting)</dt>
@@ -1212,15 +1207,15 @@ Election Quota: 3064
       filled. There are two major variants:</p>
 
       <ol>
-        <li>Those where voters select individual candidates.&nbsp;
+        <li>Those where voters select individual candidates.
         An example is the system for electing at large members of
-        the District of Columbia (Washington, DC) Council:&nbsp;
+        the District of Columbia (Washington, DC) Council:
         Each voter selects one candidate, but the top two vote
         getters are elected (two of the four at large councillors
         are chosen every second year) and no party is permitted to
         nominate more than one at large candidate per election,
         making it impossible for any one party to hold more than
-        eleven of the thirteen seats.&nbsp;  When voters are only
+        eleven of the thirteen seats.  When voters are only
         permitted to select one candidate each, but multiple seats
         are filled, the practice is sometimes referred to as
         <dfn>Single Nontransferrable Vote (SNTV)</dfn>.
@@ -1233,16 +1228,16 @@ Election Quota: 3064
         slates, the one with the largest number of votes being
         granted a majority of the seats, and the one with the
         second largest number of votes usually winning the
-        rest.&nbsp; An example is the system for electing the three
-        fourths of the Mexican Senate chosen by state:&nbsp; Three
+        rest. An example is the system for electing the three
+        fourths of the Mexican Senate chosen by state: Three
         senators are elected from each state, and the Federal
         District, but each party is permitted to nominate only two
         candidates, and voting is for party lists, rather than for
-        individual candidates.&nbsp; The party with the largest
+        individual candidates. The party with the largest
         number of votes in the given state is awarded two seats,
         while the one with the second largest number of votes wins
-        the remaining seat.&nbsp; This practice is called an
-        "incomplete list system".</li>
+        the remaining seat. This practice is called an
+        <dfn>incomplete list system</dfn>.</li>
       </ol>
     </dd>
 
@@ -1252,14 +1247,14 @@ Election Quota: 3064
       <p>An election system in which each voter gets a single vote
       which he may divide among as many candidates (regardless of
       party) as desired, and the candidates receiving the most
-      votes are elected.&nbsp; The normal consequence is to insure
+      votes are elected. The normal consequence is to insure
       minority representation in each (multimember) constituency by
       making it much more difficult for one party to win all of the
-      seats.&nbsp; At one time this was often used in local
+      seats. At one time this was often used in local
       elections in the USA, and also in elections for the Illinois
       House of Representatives (each of the 59 legislative
       districts elected one Senator and three Representatives), but
-      it has fallen out of favor.&nbsp; It is still used in some
+      it has fallen out of favor. It is still used in some
       localities.</p>
     </dd>
 
@@ -1269,19 +1264,20 @@ Election Quota: 3064
       <p>A proportional representation system in which each
       political party or faction nominates a list of candidates in
       order of preference, and each voter chooses one of
-      them.&nbsp; Seats are then awarded to each party list in
-      proportion to the number of votes it received.&nbsp; There
+      them. Seats are then awarded to each party list in
+      proportion to the number of votes it received. There
       may be a minimum percentage of votes required to receive
       seats, as is the case for the one quarter of deputies to the
       German Bundestag that are elected by state, but this is not
-      always the case.&nbsp; Extreme examples are elections to the
+      always the case. Extreme examples are elections to the
       Israeli Knesset (120 members elected at large), and the South
       African National Assembly (400 members elected at
-      large).&nbsp; In neither of these two cases is a minimum
+      large). In neither of these two cases is a minimum
       percentage of votes required for representation, meaning that
       a party that wins 1/400 of the vote in a South African
       general election is entitled to a seat in the National
-      Assembly.</p>
+      Assembly. The closed list system is the single most common
+      form of proportional representation.</p>
     </dd>
 
     <dt>Open List System</dt>
@@ -1289,20 +1285,19 @@ Election Quota: 3064
     <dd>
       <p>A proportional representation system in which voters
         are permitted to select individual candidates within a party
-        list.&nbsp; Seats are awarded to the parties in proportion to
+        list. Seats are awarded to the parties in proportion to
         the votes each received, and are filled by the candidates
-        from each party that win the largest numbers of votes.&nbsp;
+        from each party that win the largest numbers of votes.
         There is often a minimum percentage of votes required for
         representation. This form of proportional representation is
         common in much of continental Europe and Latin America.</p>
 
       <p><dfn>Free List Proportional Representation</dfn> is a
-        special case of Open List Proportional Representation that
-        allows voters to vote for as many individual candidates as
-        there are seats to be filled, the votes being regarded as
-        cast for both the candidates and their parties.  This allows
-        allows for split ticket voting, which is generally precluded
-        in list system proportional representation.</p>
+        special case of the open list system that allows voters to choose
+        as many individual candidates as there are seats to be filled,
+        the votes being regarded as cast for both the candidates and their
+        parties.  This allows "split ticket" voting, which is generally
+        precluded in list systems.</p>
     </dd>
 
     <dt><a name="STV" id="STV"></a>Single Transferrable Vote
@@ -1310,30 +1305,30 @@ Election Quota: 3064
 
     <dd>
       <p>A proportional representation system in which each voter
-      selects one or more candidates in order of preference.&nbsp;
+      selects one or more candidates in order of preference.
       Each vote is initally credited to the most preferred
       candidate of each voter, but can be transferred to candidates
       lower down on the list, if the more preferred candidates
-      already have enough votes to win election.&nbsp; Typically,
+      already have enough votes to win election. Typically,
       the Droop quota (the total number of votes divided by one
       more than the number of seats to be filled, plus one) is
-      required to insure election.&nbsp; If fewer candidates "make
+      required to insure election. If fewer candidates "make
       quota" than there are seats to be filled, then the remaining
       candidates with the highest numbers of votes are
-      declared elected.&nbsp; When STV is used in single member
-      constituencies, it is sometimes referred to as "Instant
-      Runoff Voting" (IRV) or Alternative Voting (AV).&nbsp;
+      declared elected. When STV is used in single member
+      constituencies, it is sometimes referred to as <dfn>Instant
+      Runoff Voting (IRV)</dfn> or <dfn>Alternative Voting (AV)</dfn>.
       STV in multimember constituencies is the only form of proportional
       representation in common use in which candidates run solely
-      as individuals, rather than as members of a party slate.&nbsp;
+      as individuals, rather than as members of a party slate.
       It is is rarely used outside of the former British Empire.</p>
 
       <p>STV is widely used in Ireland and Australia, and is
       traditionally advocated by the Liberal Democratic Party in
-      the UK, where plurality elections are the norm.&nbsp; <dfn>Dail
+      the UK, where plurality elections are the norm. <dfn>Dail
       Eireann</dfn> (the lower house of the Irish Parliament) is elected
       by STV from multimember constituences, as is the Australian
-      Senate.&nbsp; 45 of the 60 members of the Irish Senate
+      Senate. 45 of the 60 members of the Irish Senate
       (<dfn>Seanad Eireann</dfn>) are indirectly elected through STV
       from among panels of candidates nominated to represent different
       areas of expertise.</p>
