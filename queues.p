@@ -19,13 +19,13 @@ interface
 type
    QLinkPtr = ^QLink;
    QLink    = record
-		 Content  : pointer;
-		 Next	  : qlinkptr;
-	         end;	  
-   QType    = record     
-		 First : QLinkPtr;
-		 Last  : QLinkPtr;
-	      end;     
+                 Content  : pointer;
+                 Next	  : qlinkptr;
+              end;
+   QType    = record
+                 First : QLinkPtr;
+                 Last  : QLinkPtr;
+              end;
 
 Procedure InitQ(var Queue : QType);
 {Initialize queue}
@@ -33,12 +33,12 @@ Procedure InitQ(var Queue : QType);
 Function EmptyQ(Queue : QType) :boolean;
 {Return true if queue is empty}
 
-Procedure Enqueue(var Queue : QType;      
-		      Item  : pointer);
+Procedure Enqueue(var Queue : QType;
+                      Item  : pointer);
 {Add item to queue}
 
-Procedure Dequeue(var Queue : QType;      
-		  var Item  : pointer);
+Procedure Dequeue(var Queue : QType;
+                  var Item  : pointer);
 {Remove item from queue}
 
 Procedure KillQ(var Queue : QType );
@@ -66,12 +66,12 @@ procedure Enqueue;
      new(Link);
      with Link^ do begin
         Content:=Item;
-	Next:=nil;
+        Next:=nil;
         end;
      with Queue do begin
-	if First=nil then First:=link
-	 else Last^.Next:=Link;
-	Last:=Link;
+        if First=nil then First:=link
+         else Last^.Next:=Link;
+        Last:=Link;
        end;
      end; {Enqueue}
 
@@ -103,5 +103,3 @@ begin
 end; { killq }
 
 end.
-
-
