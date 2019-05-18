@@ -23,34 +23,33 @@ interface
 type
    RankKeyType		   = (Int,Float,Char);
    RankRecord		   = record
-				Index	     : integer;   {Index of record in
-							   base array}
-				case KeyType : RankKeyType of
-				  Int	: (IKey:^integer);
-				  Float	: (FKey:^real);
-				  Char	: (Key:^string);
-				  end;
+                                Index	     : integer;   {Index of record in base array}
+                                case KeyType : RankKeyType of
+                                  Int	: (IKey:^integer);
+                                  Float : (FKey:^real);
+                                  Char	: (Key:^string);
+                                  end;
    RankArray(Size:integer) = array[1..Size] of RankRecord;
    RankArrayPtr		   = ^RankArray;
 
 Function InitRankList(Size    : integer;
-		      KeyType : RankKeyType
-		      )	      : RankArrayPtr;
+                      KeyType : RankKeyType
+                      )       : RankArrayPtr;
    {Return a pointer to a newly created ranked list}
 
 Function RankIndex(const RankList : RankArray;
-		         Rank	  : integer
-		   )	    : integer;
+                         Rank	  : integer
+                  )               : integer;
    {Return the index of the base array element pointed to by rank}
 
 Procedure RankSetKey(var List	: RankArray;
-			 Rank	: integer;
-			 KeyPtr	: pointer);
+                         Rank	: integer;
+                         KeyPtr : pointer);
    {Set the sort key for an element in a ranked list}
 
 Procedure RankSort(var List : RankArray);
    {Sort a ranked list}
-			 
+
 implementation
 
 Procedure RankSetKey;
@@ -97,22 +96,20 @@ begin
    repeat {Bubble sort}
       Sorted:=true;
       for I:=1 to List.Size-1 do begin
-	 J:=I+1;
-	 case KeyType of
-	   Int	 : Lesser:=List[I].IKey^<List[J].IKey^;
-	   Float : Lesser:=List[I].FKey^<List[J].FKey^;
-	   Char	 : Lesser:=List[I].Key^<List[J].Key^;
-	   end; { case }
-	 if Lesser then begin
-	    TempRec:=List[I];
-	    List[I]:=List[J];
-	    List[J]:=TempRec;
-	    Sorted:=false;
-	    end;
+         J:=I+1;
+         case KeyType of
+           Int	 : Lesser:=List[I].IKey^<List[J].IKey^;
+           Float : Lesser:=List[I].FKey^<List[J].FKey^;
+           Char  : Lesser:=List[I].Key^<List[J].Key^;
+         end; { case }
+         if Lesser then begin
+            TempRec:=List[I];
+            List[I]:=List[J];
+            List[J]:=TempRec;
+            Sorted:=false;
          end;
-      until Sorted;
-   end;
+      end;
+   until Sorted;
+end;
 
-end.				 
-	      
-		     
+end.
