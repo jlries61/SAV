@@ -51,43 +51,43 @@ begin
   with Queue do begin
     First:=nil;
     Last:=nil;
-    end;
-  end; { InitQ }
+  end;
+end; { InitQ }
 
 function EmptyQ;
 begin
    return(Queue.First=nil);
-   end;   {EmptyQ}
+end;   {EmptyQ}
 
 procedure Enqueue;
-  var
-     Link : QLinkPtr;
-  begin
-     new(Link);
-     with Link^ do begin
-        Content:=Item;
-        Next:=nil;
-        end;
-     with Queue do begin
-        if First=nil then First:=link
-         else Last^.Next:=Link;
-        Last:=Link;
-       end;
-     end; {Enqueue}
+var
+   Link : QLinkPtr;
+begin
+   new(Link);
+   with Link^ do begin
+      Content:=Item;
+      Next:=nil;
+   end;
+   with Queue do begin
+      if First=nil then First:=link
+      else Last^.Next:=Link;
+      Last:=Link;
+   end;
+end; {Enqueue}
 
 procedure Dequeue;
 var
-   Link	: QLinkptr;
+   Link : QLinkptr;
 begin
    if EmptyQ(Queue) then begin
       Item:=nil;
       return;
-      end;
+   end;
    with Queue do begin
       Link:=First;
       First:=Link^.Next;
       if First=nil then Last:=nil;
-      end;
+   end;
    Item:=Link^.Content;
    dispose(Link);
 end; {Dequeue}
