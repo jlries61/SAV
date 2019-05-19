@@ -30,7 +30,7 @@ type
                                   Char	: (Key:^string);
                                   end;
    RankArray(Size:integer) = array[1..Size] of RankRecord;
-   RankArrayPtr		   = ^RankArray;
+   RankArrayPtr	   = ^RankArray;
 
 Function InitRankList(Size    : integer;
                       KeyType : RankKeyType
@@ -60,29 +60,28 @@ begin
        Int   : Ikey:=KeyPtr;
        Float : Fkey:=KeyPtr;
        Char  : Key:=Keyptr;
-       end;
-   end; { RankSetKey }
+     end;
+end; { RankSetKey }
 
 Function InitRankList;
 var
    Index : integer;
    Ranks : RankArrayPtr;
-
 begin
    new(Ranks,Size);
    if Ranks=nil then Return(Ranks); {Out of memory}
    for Index:=1 to Size do begin
       Ranks^[Index].Index:=Index;
       Ranks^[Index].KeyType:=KeyType;
-      end;
+   end;
    return(Ranks);
-   end; { InitRankList }
+end; { InitRankList }
 
 Function RankIndex;
 begin
    if (Rank<1) or (Rank>RankList.Size) then return(0) {Out of range}
-    else return(RankList[Rank].Index);
-   end; { RankIndex }
+   else return(RankList[Rank].Index);
+end; { RankIndex }
 
 Procedure RankSort;
 var
@@ -91,7 +90,6 @@ var
    I,J	   : integer;      {Indeces}
    Sorted  : boolean;
    TempRec : RankRecord;   {Temporary record}
-
 begin
    repeat {Bubble sort}
       Sorted:=true;
