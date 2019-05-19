@@ -8,6 +8,5 @@ queues.gpi:queues.p
 ranklist.gpi:ranklist.p
 	$(PC) -c ranklist.p
 
-clean: 
+clean:
 	rm sav *.o *.gpi
-
