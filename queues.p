@@ -30,7 +30,7 @@ type
 Procedure InitQ(var Queue : QType);
 {Initialize queue}
 
-Function EmptyQ(Queue : QType) :boolean;
+Function EmptyQ(Queue : QType):boolean;
 {Return true if queue is empty}
 
 Procedure Enqueue(var Queue : QType;
@@ -46,7 +46,7 @@ Procedure KillQ(var Queue : QType );
 
 implementation
 
-Procedure InitQ;
+Procedure InitQ(var Queue : QType);
 begin
   with Queue do begin
     First:=nil;
@@ -54,12 +54,13 @@ begin
   end;
 end; { InitQ }
 
-function EmptyQ;
+function EmptyQ(Queue : QType):boolean;
 begin
-   return(Queue.First=nil);
+   EmptyQ:=Queue.First=nil;
 end;   {EmptyQ}
 
-procedure Enqueue;
+procedure Enqueue(var Queue : QType;
+                      Item  : pointer);
 var
    Link : QLinkPtr;
 begin
@@ -75,24 +76,24 @@ begin
    end;
 end; {Enqueue}
 
-procedure Dequeue;
+procedure Dequeue(var Queue : QType;
+                  var Item  : pointer);
 var
    Link : QLinkptr;
 begin
-   if EmptyQ(Queue) then begin
-      Item:=nil;
-      return;
+   if EmptyQ(Queue) then Item:=nil
+   else begin
+      with Queue do begin
+         Link:=First;
+         First:=Link^.Next;
+         if First=nil then Last:=nil;
+      end;
+      Item:=Link^.Content;
+      dispose(Link);
    end;
-   with Queue do begin
-      Link:=First;
-      First:=Link^.Next;
-      if First=nil then Last:=nil;
-   end;
-   Item:=Link^.Content;
-   dispose(Link);
 end; {Dequeue}
 
-procedure killq;
+procedure killq(var Queue : QType );
 var
    Item : pointer;
 begin
